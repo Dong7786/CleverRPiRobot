@@ -41,7 +41,7 @@ public class CleverRobot extends IRobotAdapter {
 	private boolean loop() throws Exception {
 		readSensors(100);
 		driveDirect(1000, 1000);
-		Thread.sleep(10000);
+		// Thread.sleep(10000);
 		if (isBumpLeft()) {
 			driveDirect(-1000, -1000);
 
@@ -49,20 +49,20 @@ public class CleverRobot extends IRobotAdapter {
 
 			Thread.sleep(710);
 			driveDirect(1000, 1000);
-			// } else if (isBumpRight()) {
-			// driveDirect(-1000, -1000);
-			//
-			// driveDirect(-1000, 0);
-			//
-			// Thread.sleep(710);
-			// driveDirect(1000, 1000);
-			// } else if (isLightBump()) {
-			// driveDirect(-1000, -1000);
-			//
-			// driveDirect(-1000, 0);
-			//
-			// Thread.sleep(710);
-			// driveDirect(1000, 1000);
+		} else if (isBumpRight()) {
+			driveDirect(-1000, -1000);
+
+			driveDirect(-1000, 0);
+
+			Thread.sleep(710);
+			driveDirect(1000, 1000);
+		} else if (isLightBump()) {
+			driveDirect(-1000, -1000);
+
+			driveDirect(-1000, 0);
+
+			Thread.sleep(710);
+			driveDirect(1000, 1000);
 		}
 
 		return true;
